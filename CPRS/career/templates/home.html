@@ -1,0 +1,98 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CPRS</title>
+</head>
+
+<body>
+	<br><br>
+	{% if flag %}
+
+	{% else %}
+	<form method="post" action="/career/saveCPRSData/">
+	{% csrf_token %}
+		<label>q1 : </label>
+		<input type="text" name="q1" required><br>
+		<label>q2 : </label>
+		<input type="text" name="q2" required><br>
+		<label>q3 : </label>
+		<input type="text" name="q3" required><br>
+		<label>q4 : </label>
+		<input type="text" name="q4" required><br>
+		<label>q5 : </label>
+		<input type="text" name="q5" required><br>
+		<label>q6 : </label>
+		<input type="text" name="q6" required><br>
+		<label>q7 : </label>
+		<input type="text" name="q7" required><br>
+		<label>q8 : </label>
+		<input type="text" name="q8" required><br>
+		<label>q9 : </label>
+		<input type="text" name="q9" required><br>
+		<label>q10 : </label>
+		<input type="text" name="q10" required><br>
+		<label>q11 : </label>
+		<input type="text" name="q11" required><br>
+		<label>q12 : </label>
+		<input type="text" name="q12" required><br>
+		<label>q13 : </label>
+		<input type="text" name="q13" required><br>
+		<label>q14 : </label>
+		<input type="text" name="q14" required><br>
+		<label>q15 : </label>
+		<input type="text" name="q15" required><br>
+		
+		<button type="submit">Submit</button>
+	</form>
+	<br><br><br>
+	{% endif %}
+	<table border="1">
+		<thead>
+			<tr>
+				<th>uid</th>
+				<th>q1</th>
+				<th>q2</th>
+				<th>q3</th>
+				<th>q4</th>
+				<th>q5</th>
+				<th>q6</th>
+				<th>q7</th>
+				<th>q8</th>
+				<th>q9</th>
+				<th>q10</th>
+				<th>q11</th>
+				<th>q12</th>
+				<th>q13</th>
+				<th>q14</th>
+				<th>q15</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for career in cusers %}
+			<tr>
+				<td>{{ career.uid }}</td>
+				<td>{{ career.q1 }}</td>
+				<td>{{ career.q2 }}</td>
+				<td>{{ career.q3 }}</td>
+				<td>{{ career.q4 }}</td>
+				<td>{{ career.q5 }}</td>
+				<td>{{ career.q6 }}</td>
+				<td>{{ career.q7 }}</td>
+				<td>{{ career.q8 }}</td>
+				<td>{{ career.q9 }}</td>
+				<td>{{ career.q10 }}</td>
+				<td>{{ career.q11 }}</td>
+				<td>{{ career.q12 }}</td>
+				<td>{{ career.q13 }}</td>
+				<td>{{ career.q14 }}</td>
+				<td>{{ career.q15 }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<br><br>
+	
+</body>
+
+</html>
